@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<math.h>
+int count=0;
+int i,j,a,flag;
+long arr[1000000];
+int sum=0;
+void pass(int val,int per)
+{
+    for(i=0;i<per;i++)
+     {
+      for(j=0;j<val;j++)
+       {
+          int p=pow(2,j);
+          if(i&p)
+           {
+             printf("%d",1);
+             arr[j]=1;
+            }
+          else
+           {  
+             printf("%d",0);
+             arr[j]=0;
+            }
+       }
+       
+      for(j=0;j<val-1;j++)
+        {
+            if((a[j]==0)&&(a[j++]==0))
+             {
+               int flag=0;
+               break;
+             }
+             else
+              {
+                  flag=1;
+              }
+        }
+         if(flag==1)
+           count++;
+                
+      printf("\n");
+    }
+}
+
+void main()
+{
+   
+   long t,n;
+   scanf("%d",&t);
+   while(t>0)
+    {
+      scanf("%d",&n);
+      t=pow(2,n);
+      pass(n,t);
+      printf("%d",count);
+      t++;
+    }
+   
+}
